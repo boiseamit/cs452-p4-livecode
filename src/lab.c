@@ -15,7 +15,6 @@ void buddy_init(struct buddy_pool *pool, size_t size)
 {
 	
 	if (size == 0) {size = UINT64_C(1) << DEFAULT_K;}
-	if (size < 0) {errno = ENOMEM;}
 
 	pool->kval_m = btok(size);
 	pool->numbytes = UINT64_C(1) << pool->kval_m;
